@@ -243,8 +243,6 @@ wandb.login()
 wandb_logger = WandbLogger(project="project-hyperparameters", name="test1")
 
 from datetime import datetime
-wandb.finish()
-
 def runName(args, parser):
     run_name = "QBZ"
     for arg, value in vars(args).items():
@@ -302,12 +300,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     main(args, parser)
 
-run_name = f"hyper-tuning5_test" #{datetime.now().strftime('%Y%m%d_%H%M%S')}
-wandb_logger = WandbLogger(project="project-hyperparameters", name=run_name)
-L.seed_everything(42)
-
-wandb.init(project="project-hyperparameters", name="hyper-tuning_test", tags=["test2"])
-
 dm = GLUEDataModule(
     model_name_or_path="distilbert-base-uncased",
     task_name="mrpc",
@@ -326,4 +318,4 @@ trainer = L.Trainer(
     devices=1,
     logger=wandb_logger,
 )
-trainer.fit(model, datamodule=dm)
+# trainer.fit(model, datamodule=dm)
