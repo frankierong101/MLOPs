@@ -1,4 +1,4 @@
-# Steps to take to run
+# Steps
 ## 1.
 First copy/get a key from "https://wandb.ai/authorize" to visualise the data down the line. If you don't have an account you'd unfortunetely have to create one here "https://wandb.ai/site/"
 
@@ -14,6 +14,7 @@ Follow up with either "docker run NAME"(without passing in parameters) or "docke
 *docker run test1 python frankiemlop_v1.py --learning_rate 0.00011 --warmup_steps 2 --weight_decay 32*
 
 
+# Hyperparameters
 - `--model_name`
 - `--task_name`
 - `--max_seq_length`
