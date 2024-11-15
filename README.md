@@ -14,13 +14,12 @@ Follow up with either "docker run NAME"(without passing in parameters) or "docke
 *docker run test1 python frankiemlop_v1.py --learning_rate 0.00011 --warmup_steps 2 --weight_decay 32*
 
 
-# Hyperparemeters
---model_name
---task_name
---max_seq_length
---train_batch_size
---eval_batch_size
---learning_rate
---warmup_steps
---weight_decay
---epochs
+- `--model_name`
+- `--task_name`
+- `--max_seq_length`
+- `--train_batch_size`
+- `--eval_batch_size`
+- `--learning_rate`
+- `--warmup_steps`
+- `--weight_decay`
+- `--epochs`
