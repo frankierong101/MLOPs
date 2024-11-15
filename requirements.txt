@@ -1,10 +1,10 @@
 torch==2.1.0
-transformers==4.32.0  # Match this with the version you're using for transformers
-datasets==2.18.0  # You may want the latest stable version
-evaluate==0.4.0  # Matches the evaluate library you use
-lightning==2.0.0  # PyTorch Lightning
-wandb==0.15.4  # Match with the version you're using
-ipywidgets==7.7.1  # For widgets in Colab or Jupyter
-argparse==1.4.0  # For argument parsing
+transformers==4.32.0
+datasets==2.18.0 
+evaluate==0.4.0  
+lightning==2.0.0 
+wandb==0.15.4  
+ipywidgets==7.7.1  
+argparse==1.4.0  
 scipy
 scikit-learn

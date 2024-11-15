@@ -300,22 +300,21 @@ if __name__ == "__main__":
     args = parser.parse_args()
     main(args, parser)
 
-dm = GLUEDataModule(
-    model_name_or_path="distilbert-base-uncased",
-    task_name="mrpc",
-)
-dm.setup("fit")
-model = GLUETransformer(
-    model_name_or_path="distilbert-base-uncased",
-    num_labels=dm.num_labels,
-    eval_splits=dm.eval_splits,
-    task_name=dm.task_name,
-)
+# dm = GLUEDataModule(
+#     model_name_or_path="distilbert-base-uncased",
+#     task_name="mrpc",
+# )
+# dm.setup("fit")
+# model = GLUETransformer(
+#     model_name_or_path="distilbert-base-uncased",
+#     num_labels=dm.num_labels,
+#     eval_splits=dm.eval_splits,
+#     task_name=dm.task_name,
+# )
 
-trainer = L.Trainer(
-    max_epochs=epochs,
-    accelerator="auto",
-    devices=1,
-    logger=wandb_logger,
-)
-# trainer.fit(model, datamodule=dm)
+# trainer = L.Trainer(
+#     max_epochs=epochs,
+#     accelerator="auto",
+#     devices=1,
+#     logger=wandb_logger,
+# )
