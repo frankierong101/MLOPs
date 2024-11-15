@@ -144,11 +144,11 @@ class GLUETransformer(L.LightningModule):
         model_name_or_path: str,
         num_labels: int,
         task_name: str,
-        learning_rate: float = 3e-5,
+        learning_rate: float = 2e-5,
         warmup_steps: int = 0,
-        weight_decay: float = 0.003,
-        train_batch_size: int = 16,
-        eval_batch_size: int = 16,
+        weight_decay: float = 0,
+        train_batch_size: int = 32,
+        eval_batch_size: int = 32,
         eval_splits: Optional[list] = None,
         **kwargs,
     ):
@@ -235,15 +235,10 @@ class GLUETransformer(L.LightningModule):
         scheduler = {"scheduler": scheduler, "interval": "step", "frequency": 1}
         return [optimizer], [scheduler]
 
-epochs = 3
-
 import wandb
 from pytorch_lightning.loggers import WandbLogger
 wandb.login()
-wandb_logger = WandbLogger(project="project-hyperparameters", name="test1")
-
 from datetime import datetime
-wandb.finish()
 
 def runName(args, parser):
     run_name = "QBZ"
@@ -283,7 +278,7 @@ def main(args, parser):
     )
     trainer.fit(model, datamodule=dm)
     wandb.finish()
-    
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="HyperparameterTuningFrankieRong")
 
@@ -301,29 +296,3 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     main(args, parser)
-
-run_name = f"hyper-tuning5_test" #{datetime.now().strftime('%Y%m%d_%H%M%S')}
-wandb_logger = WandbLogger(project="project-hyperparameters", name=run_name)
-L.seed_everything(42)
-
-wandb.init(project="project-hyperparameters", name="hyper-tuning_test", tags=["test2"])
-
-dm = GLUEDataModule(
-    model_name_or_path="distilbert-base-uncased",
-    task_name="mrpc",
-)
-dm.setup("fit")
-model = GLUETransformer(
-    model_name_or_path="distilbert-base-uncased",
-    num_labels=dm.num_labels,
-    eval_splits=dm.eval_splits,
-    task_name=dm.task_name,
-)
-
-trainer = L.Trainer(
-    max_epochs=epochs,
-    accelerator="auto",
-    devices=1,
-    logger=wandb_logger,
-)
-trainer.fit(model, datamodule=dm)
