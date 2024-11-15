@@ -13,6 +13,8 @@ Follow up with either "docker run NAME"(without passing in parameters) or "docke
 
 *docker run test1 python frankiemlop_v1.py --learning_rate 0.00011 --warmup_steps 2 --weight_decay 32*
 
+NOTE: run docker run --gpus all test1 OR
+docker run --gpus all test1 python frankiemlop_v1.py {--a A --b B --c C}
 
 # Hyperparameters
 - `--model_name`
