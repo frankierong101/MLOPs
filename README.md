@@ -1,4 +1,4 @@
-# Steps
+# Steps to run
 
 NOTE: If you want gpu support on your local device(roughly 30m time saved for total epoch times), fork my repo, clone it onto an empty directory and then follow steps 1-4 below but for step 4, use these commands below instead of the ones I listed
 run docker run --gpus all test1 OR docker run --gpus all test1 python frankiemlop_v1.py {--a A --b B --c C}
