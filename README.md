@@ -1,7 +1,7 @@
 # Steps to run
 
-NOTE: If you want gpu support on your local device(roughly 30m time saved for total epoch times), fork my repo, clone it onto an empty directory and then follow steps 1-4 below but for step 4, use these commands below instead of the ones I listed
-run ""docker run --gpus all test1"" OR ""docker run --gpus all test1 python frankiemlop_v1.py {--a A --b B --c C}""
+NOTE: If you want gpu support on your local device(roughly 30m time saved for total epoch times), fork my repo, clone it onto an empty directory and then follow steps 1-4 below but for step 4, use these commands below instead of the ones I listed run <br>
+""docker run --gpus all test1"" OR ""docker run --gpus all test1 python frankiemlop_v1.py {--a A --b B --c C}""
 
 ## 1.
 First copy/get a key from "https://wandb.ai/authorize" to visualise the data down the line. If you don't have an account you'd unfortunetely have to create one here "https://wandb.ai/site/"
