@@ -10,10 +10,10 @@ docker run --gpus all test1 python frankiemlop_v1.py {--a A --b B --c C}
 ```
 
 ## 1.
-First copy/get a key from "https://wandb.ai/authorize" to visualise the data down the line. If you don't have an account you'd unfortunetely have to create one here "https://wandb.ai/site/"
+First get a key from "https://wandb.ai/authorize" to visualise the data down the line. If you don't have an account you'd unfortunetely have to create one here "https://wandb.ai/site/"
 
 ## 2.
-Secondly enter codespace and go to the Dockerfile, from there insert the key right after the "=" on line 5
+Secondly, enter codespace and go to the Dockerfile, from there insert the key right after the "=" on line 5
 
 ## 3.
 Thirdly, open the terminal and run: 
