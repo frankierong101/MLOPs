@@ -24,7 +24,7 @@ Follow up with either the first option(not passing in parameters) or the latter 
 ```sh
 docker run -e WANDB_API_KEY=YOUR_WANDB_KEY_HERE NAME
 ```
-(without passing in parameters) or 
+or 
 ```sh
 docker run -e WANDB_API_KEY=YOUR_WANDB_KEY_HERE NAME NAME python frankiemlop_v1.py {--a A --b B --c C}
 ```
