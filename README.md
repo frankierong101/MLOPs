@@ -26,12 +26,13 @@ docker run -e WANDB_API_KEY=YOUR_WANDB_KEY_HERE NAME
 ```
 or 
 ```sh
-docker run -e WANDB_API_KEY=YOUR_WANDB_KEY_HERE NAME NAME python frankiemlop_v1.py {--a A --b B --c C}
+docker run -e WANDB_API_KEY=YOUR_WANDB_KEY_HERE NAME python frankiemlop_v1.py {--a A --b B --c C}
 ```
 Within the curly brackets, lowercase means the hyperparemeters and uppercase means the hyperparemeter values. Example can be seen below, while a list of all the hyperparemeters can be found at the very end of this file.
 
-*docker run test1 python frankiemlop_v1.py --learning_rate 0.00011 --warmup_steps 2 --weight_decay 32*
-
+```sh
+docker run --gpus all -e WANDB_API_KEY=YOUR_WANDB_KEY_HERE NAME python frankiemlop_v1.py --learning_rate 0.00011 --warmup_steps 2 --weight_decay 32
+```
 # Hyperparameters
 - `--model_name`
 - `--task_name`
