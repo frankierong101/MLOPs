@@ -1,6 +1,6 @@
 # Steps to run
 
-NOTE: If you want gpu support on your local device(roughly 30m time saved for total epoch times), clone my repo onto an empty directory and then follow steps 1-4 below but for step 4, use these commands below instead of the ones I listed run
+NOTE: If you have a NVIDIA driver and want to save time(roughly 30m time saved for total epoch times), clone my repo onto an empty directory and then follow steps 1-4 below but for step 4, use these commands below instead of the ones I listed run
 ```sh 
 docker run --gpus all -e WANDB_API_KEY=YOUR_WANDB_KEY_HERE NAME
 ``` 
