@@ -1,37 +1,34 @@
 # Steps to run
 
-NOTE: If you want gpu support on your local device(roughly 30m time saved for total epoch times), fork my repo, clone it onto an empty directory and then follow steps 1-4 below but for step 4, use these commands below instead of the ones I listed run
+NOTE: If you want gpu support on your local device(roughly 30m time saved for total epoch times), clone my repo onto an empty directory and then follow steps 1-4 below but for step 4, use these commands below instead of the ones I listed run
 ```sh 
-docker run --gpus all test1
+docker run --gpus all -e WANDB_API_KEY=YOUR_WANDB_KEY_HERE NAME
 ``` 
 OR 
 ```sh 
-docker run --gpus all test1 python frankiemlop_v1.py {--a A --b B --c C}
+docker run --gpus all -e WANDB_API_KEY=YOUR_WANDB_KEY_HER NAME python frankiemlop_v1.py {--a A --b B --c C}
 ```
 
 ## 1.
 First get a key from "https://wandb.ai/authorize" to visualise the data down the line. If you don't have an account you'd unfortunetely have to create one here "https://wandb.ai/site/"
 
 ## 2.
-Secondly, enter codespace and go to the Dockerfile, from there insert the key right after the "=" on line 5
-
-## 3.
-Thirdly, open the terminal and run: 
+Secondly, open the terminal and run: 
 ```sh
 docker build -t NAME .
 ```
 You can replace "NAME" with any lowercase name of your choice if you wish. This process took me 4 minutes when I ran it on github codespace
 
-## 4.
-Follow up with either 
+## 3.
+Follow up with either the first option(not passing in parameters) or the latter if you wan't to pass parameters in. Keep in mind to replace the placeholder text of wandb key with your own key from step 1
 ```sh
-docker run NAME
+docker run -e WANDB_API_KEY=YOUR_WANDB_KEY_HERE NAME
 ```
 (without passing in parameters) or 
 ```sh
-docker run test1 python frankiemlop_v1.py {--a A --b B --c C}
+docker run -e WANDB_API_KEY=YOUR_WANDB_KEY_HERE NAME NAME python frankiemlop_v1.py {--a A --b B --c C}
 ```
-Former allows you to run with default values while the latter allows you to change the hyperparameters. Within the curly brackets, lowercase means the hyperparemeters and uppercase means the hyperparemeter values. Example can see below, while a list of all the hyperparemeters and syntax can be found at the very end of this file.
+Within the curly brackets, lowercase means the hyperparemeters and uppercase means the hyperparemeter values. Example can be seen below, while a list of all the hyperparemeters can be found at the very end of this file.
 
 *docker run test1 python frankiemlop_v1.py --learning_rate 0.00011 --warmup_steps 2 --weight_decay 32*
 
