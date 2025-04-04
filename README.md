@@ -20,7 +20,7 @@ docker build -t NAME .
 You can replace "NAME" with any lowercase name of your choice if you wish. This process took me 4 minutes when I ran it on github codespace
 
 ## 3.
-Follow up with either the first option(not passing in parameters) or the latter if you wan't to pass parameters in. Keep in mind to replace the placeholder text of wandb key with your own key from step 1
+Follow up with either the first option(not passing in parameters) or the latter if you want to pass parameters in. Keep in mind to replace the placeholder text of wandb key with your own key from step 1
 ```sh
 docker run -e WANDB_API_KEY=YOUR_WANDB_KEY_HERE NAME
 ```
